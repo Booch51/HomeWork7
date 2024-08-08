@@ -18,6 +18,7 @@ public class Main {
         int total = 0;
         int i = 0;
         while (total < 2_459_000) {
+            total = total + total/100;
             total = total + salary;
             i = i + 1;
             System.out.println("Месяц " + i + ", сумма накоплений равна " + total + " рублей.");
@@ -25,27 +26,26 @@ public class Main {
 
         System.out.println("Задача 2");
 
-        int a = 0;
-        while (a < 10) {
-            a = a + 1;
-            System.out.print(" " + a);
+        int currentNumber = 0;
+        while (currentNumber < 10) {
+            currentNumber += 1;
+            System.out.print(" " + currentNumber);
         }
         System.out.println();
-        int b = 11;
-        while (b > 1) {
-            b = b - 1;
-            System.out.print(" " + b);
+
+        for (int nextNumber = 10; nextNumber > 0; nextNumber--) {
+            System.out.print(" " + nextNumber);
         }
         System.out.println();
 
         System.out.println("Задача 3");
 
-        int Y = 12_000_000;
+        int y = 12_000_000;
         int year = 0;
         while (year < 10) {
-            Y = Y + (Y / 1000 * 17) - (Y / 1000 * 8);
-            year = year + 1;
-            System.out.println("Год "+ year + ", численность населения составляет " + Y);
+            y = y + (y / 1000 * 17) - (y / 1000 * 8);
+            year += 1;
+            System.out.println("Год "+ year + ", численность населения составляет " + y);
         }
 
         System.out.println("Задача 4");
@@ -54,7 +54,7 @@ public class Main {
         int month = 0;
         while (deposit < 12_000_000) {
             deposit *= 1.07;
-            month = month +1;
+            month += 1;
             System.out.println("Месяц " + month + ", сумма накоплений равна " + deposit + " рублей.");
         }
 
@@ -64,7 +64,7 @@ public class Main {
         int period = 0;
         while (contribution < 12_000_000) {
             contribution *= 1.07;
-            period = period +1;
+            period += 1;
             if (period % 6 == 0) {
                 System.out.println("Месяц " + period + ", сумма накоплений равна " + contribution + " рублей.");
             }
@@ -76,7 +76,7 @@ public class Main {
         int totalMonth = 0;
         while (totalMonth <= 108) {
             money *= 1.07;
-            totalMonth = totalMonth + 1;
+            totalMonth += 1;
             if (totalMonth % 6 == 0) {
                 System.out.println("Месяц " + totalMonth + ", сумма накоплений равна " + money + " рублей.");
             }
@@ -85,9 +85,10 @@ public class Main {
         System.out.println("Задача 7");
 
         int friday = 5;
+        int daysWeek = 7;
         while (friday <= 31) {
             System.out.println("Сегодня пятница, " + friday + "-е число. Необходимо подготовить отчет");
-            friday = friday + 7;
+            friday += daysWeek;
         }
 
         System.out.println("Задача 8");
@@ -100,9 +101,5 @@ public class Main {
                 System.out.println(d);
             }
         }
-
-
-
-
     }
 }
